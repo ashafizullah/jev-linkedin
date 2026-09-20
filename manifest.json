@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Jev Job Match",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Menilai kecocokan lowongan LinkedIn dengan CV kamu dan mengestimasi peluang lolos seleksi, memakai model keputusan Jev.",
   "minimum_chrome_version": "116",
   "permissions": ["storage"],

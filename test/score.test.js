@@ -44,7 +44,12 @@ const ANSWERS = {
   },
 };
 
-const JOB = { title: "Full Stack Engineer", company: "BJAK", location: "Singapura", url: "https://x" };
+const JOB = {
+  title: "Full Stack Engineer",
+  company: "Northwind Technologies",
+  location: "Jakarta",
+  url: "https://example.com/job",
+};
 const SIGNALS = { applicants: 39, postedDaysAgo: 1, postedLabel: "1 hari yang lalu", connections: null };
 
 test("expectedLevel menghitung nilai harapan dari distribusi", () => {

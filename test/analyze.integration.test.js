@@ -9,23 +9,26 @@ const baseUrl = process.env.JEV_BASE_URL ?? "https://api.typesafe.ai/v1";
 const model = process.env.JEV_MODEL ?? "jev-latest";
 const live = { baseUrl, apiKey, model, skip: apiKey ? false : "JEV_API_KEY tidak diisi" };
 
+// Lowongan sintetis. Sengaja tidak memakai perusahaan atau lokasi nyata: yang
+// diuji cuma satu sifat, yaitu lowongan yang mewajibkan domisili di negara yang
+// bukan tempat kandidat tinggal.
 const JOB = {
-  jobId: "4469108058",
-  title: "Full Stack Software Engineer - AI Finance Agent",
-  company: "BJAK",
-  location: "Singapura (Jarak Jauh)",
+  jobId: "1000000001",
+  title: "Full Stack Software Engineer",
+  company: "Northwind Technologies",
+  location: "Jerman (Jarak Jauh)",
   workMode: "Jarak Jauh",
   employmentType: "Penuh waktu",
   description:
-    "We are looking for full stack engineers to build fast across BJAK's AI Finance Agent. " +
+    "We are looking for full stack engineers to build product features end to end. " +
     "3+ years of full stack software engineering experience. Strong frontend and backend fundamentals. " +
-    "This role is remote, but candidates must be based in Singapore.",
+    "This role is remote, but candidates must be based in Germany.",
 };
 
 const PROFILE = {
   headline: "Full Stack Developer",
   experienceYears: "4",
-  location: "Batam, Indonesia",
+  location: "Jakarta, Indonesia",
   languages: "Indonesia (native), Inggris (profesional)",
   education: "S1 Teknik Informatika",
   skills: "TypeScript, React, Node.js, PostgreSQL",
@@ -64,7 +67,7 @@ test("analyzeJob menghasilkan laporan lengkap dari endpoint sungguhan", { skip: 
   assert.ok(report.checks.length === 5, "lima cek syarat harus terisi semua");
   assert.ok(report.usage.input_tokens > 100);
 
-  // Lowongan ini mewajibkan domisili Singapura sementara kandidat di Batam:
+  // Lowongan ini mewajibkan domisili di Jerman sementara kandidat di Jakarta:
   // model harus menandai syarat lokasi sebagai tidak terpenuhi.
   const location = report.checks.find((check) => check.key === "meets_location");
   assert.equal(location.ok, false);
@@ -72,6 +75,6 @@ test("analyzeJob menghasilkan laporan lengkap dari endpoint sungguhan", { skip: 
   console.log(
     `\n  ${report.job.title} — ${report.match.percent}% cocok, ` +
       `${report.opening.passScreening}% lolos screening, ${report.opening.offer}% offer ` +
-      `(${report.verdict.label})\n`,
+      `(${report.verdict.level})\n`,
   );
 });

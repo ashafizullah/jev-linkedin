@@ -144,12 +144,12 @@ tidak akan pernah menimpa yang sudah kamu ketik tangan.
 
 **Tidak ada bagian preferensi lamaran, dan itu memang disengaja.** Sebelumnya ada isian izin
 kerja, ekspektasi gaji, mode kerja, dan catatan. Kami menghapusnya setelah mengukur bahwa ia tidak
-mengubah keputusan apa pun: pada satu lowongan nyata (BJAK, mewajibkan domisili Singapura,
-kandidat di Batam), empat kali jalan per variasi menghasilkan keputusan dan penyebab utama yang
-sama, baik profilnya hanya CV maupun terisi lengkap. Ternyata `expectedSalary` juga tidak pernah
-dipakai oleh satu pun dari sepuluh pertanyaan — beban mati sejak awal. Yang justru bergerak adalah
-cek teknologi (68,5% → 79,3%) setelah daftar skill ditulis eksplisit, dan itulah alasan detail
-hasil ekstraksi tetap dipertahankan sementara field preferensi dihapus.
+mengubah keputusan apa pun: pada satu lowongan nyata (remote, tapi mewajibkan domisili di negara
+yang bukan tempat kandidat tinggal), empat kali jalan per variasi menghasilkan keputusan dan
+penyebab utama yang sama, baik profilnya hanya CV maupun terisi lengkap. Ternyata `expectedSalary`
+juga tidak pernah dipakai oleh satu pun dari sepuluh pertanyaan — beban mati sejak awal. Yang
+justru bergerak adalah cek teknologi (68,5% → 79,3%) setelah daftar skill ditulis eksplisit, dan
+itulah alasan detail hasil ekstraksi tetap dipertahankan sementara field preferensi dihapus.
 
 Field yang kosong memang tidak dikirim ke Jev, jadi analisis tetap jalan hanya dengan teks CV.
 
@@ -255,8 +255,9 @@ npm test                                  # unit test saja
 JEV_API_KEY=... npm test                  # termasuk integration test ke endpoint sungguhan
 ```
 
-Integration test memanggil Jev untuk lowongan BJAK yang mewajibkan domisili Singapura sementara
-kandidatnya di Batam, lalu memastikan model menandai syarat lokasi sebagai tidak terpenuhi.
+Integration test memanggil Jev untuk lowongan sintetis yang mewajibkan domisili di negara yang
+bukan tempat kandidat tinggal, lalu memastikan model menandai syarat lokasi sebagai tidak
+terpenuhi.
 
 Dua file tes ada khusus untuk menjaga terjemahan tetap jujur: `messages.test.js` memastikan kedua
 bahasa punya kumpulan kunci yang persis sama, tidak ada nilai yang kosong atau sama dengan

@@ -9,11 +9,12 @@ import "../src/shared/signals.js";
 const { parseSignals, signalRows, signalLines } = globalThis.JevSignals;
 const { setLocale } = globalThis.JevMessages;
 
-// String di bawah ini disalin apa adanya dari DOM LinkedIn yang sudah dirender
-// (akun dengan antarmuka Indonesia), termasuk kasus "Diposting1" tanpa spasi.
-const DETAIL_HEADER = `BJAK
-Full Stack Software Engineer - AI Finance Agent 
-Singapura · 1 hari yang lalu · 39 orang mengklik Lamar
+// Label LinkedIn di bawah ini disalin apa adanya dari DOM yang sudah dirender
+// (antarmuka Indonesia), termasuk kasus "Diposting1" tanpa spasi. Nama perusahaan
+// dan judul lowongannya diganti dengan yang fiktif; yang diuji parser cuma labelnya.
+const DETAIL_HEADER = `Northwind Technologies
+Full Stack Software Engineer 
+Jakarta · 1 hari yang lalu · 39 orang mengklik Lamar
 Dipromosikan oleh pembuka lowongan • Respons dikelola di luar LinkedIn
 Jarak Jauh
 Penuh waktu
@@ -76,8 +77,11 @@ test("label Inggris juga dikenali", () => {
 });
 
 test("koneksi di perusahaan terbaca dari kartu daftar", () => {
-  assert.equal(parseSignals("Astek\nSenior Software Engineer\n1 koneksi bekerja di sini").connections, 1);
-  assert.equal(parseSignals("Acme\nEngineer\n3 connections work here").connections, 3);
+  assert.equal(
+    parseSignals("Northwind Technologies\nSenior Software Engineer\n1 koneksi bekerja di sini").connections,
+    1,
+  );
+  assert.equal(parseSignals("Acme Corp\nEngineer\n3 connections work here").connections, 3);
 });
 
 test("pelamar awal tidak dianggap punya jumlah pelamar", () => {

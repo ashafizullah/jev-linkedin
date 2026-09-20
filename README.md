@@ -143,12 +143,12 @@ and it only ever writes into **empty** fields, so it never overwrites something 
 
 **There is no application-preferences section, on purpose.** It used to ask for work
 authorisation, expected salary, work mode and notes. We removed it after measuring that it did not
-change any decision: on one real posting (BJAK, requiring Singapore residency, candidate in
-Batam), four runs per variant produced the same verdict and the same dominant reason whether the
-profile was CV-only or fully filled. It also turned out `expectedSalary` was never consumed by any
-of the ten questions — dead weight from the start. What did move was the tech-stack check
-(68.5% → 79.3%) once the skills list was explicit, and that is exactly why the extracted details
-stayed while the preference fields went.
+change any decision: on one real posting (remote, but requiring residency in a country the
+candidate did not live in), four runs per variant produced the same verdict and the same dominant
+reason whether the profile was CV-only or fully filled. It also turned out `expectedSalary` was
+never consumed by any of the ten questions — dead weight from the start. What did move was the
+tech-stack check (68.5% → 79.3%) once the skills list was explicit, and that is exactly why the
+extracted details stayed while the preference fields went.
 
 Empty fields are simply omitted from what is sent to Jev, so the analysis runs on CV text alone.
 
@@ -252,8 +252,8 @@ npm test                                  # unit tests only
 JEV_API_KEY=... npm test                  # also runs the integration test
 ```
 
-The integration test asks Jev about a BJAK posting that requires Singapore residency while the
-candidate is in Batam, then asserts the model flags the location requirement as unmet.
+The integration test asks Jev about a synthetic posting that requires residency in a country the
+candidate does not live in, then asserts the model flags the location requirement as unmet.
 
 Two test files exist purely to keep translations honest: `messages.test.js` asserts that both
 locales have exactly the same keys, that no value is empty or identical to its key, and that

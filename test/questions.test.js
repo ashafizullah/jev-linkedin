@@ -15,7 +15,7 @@ import "../src/shared/signals.js";
 const PROFILE = {
   headline: "Full Stack Developer",
   experienceYears: "4",
-  location: "Batam, Indonesia",
+  location: "Jakarta, Indonesia",
   languages: "Indonesia, Inggris",
   education: "S1 Teknik Informatika",
   skills: "TypeScript, React, Node.js",
@@ -24,8 +24,8 @@ const PROFILE = {
 
 const JOB = {
   title: "Full Stack Engineer",
-  company: "BJAK",
-  location: "Singapura",
+  company: "Northwind Technologies",
+  location: "Jerman",
   workMode: "Jarak Jauh",
   employmentType: "Penuh waktu",
   description: "We need a full stack engineer with 3+ years building product features.",
@@ -58,9 +58,9 @@ test.beforeEach(() => setLocale("id"));
 test("state memisahkan kandidat dan lowongan", () => {
   const state = buildState({ job: JOB, profile: PROFILE });
   assert.deepEqual(Object.keys(state), ["kandidat", "lowongan"]);
-  assert.match(state.kandidat, /Batam, Indonesia/);
+  assert.match(state.kandidat, /Jakarta, Indonesia/);
   assert.match(state.kandidat, /TypeScript, React, Node\.js/);
-  assert.match(state.lowongan, /BJAK/);
+  assert.match(state.lowongan, /Northwind Technologies/);
   assert.match(state.lowongan, /3\+ years/);
 });
 
@@ -68,8 +68,8 @@ test("kunci state ikut berganti bahasa", () => {
   setLocale("en");
   const state = buildState({ job: JOB, profile: PROFILE });
   assert.deepEqual(Object.keys(state), ["candidate", "job"]);
-  assert.match(state.candidate, /Location: Batam, Indonesia/);
-  assert.match(state.job, /Company: BJAK/);
+  assert.match(state.candidate, /Location: Jakarta, Indonesia/);
+  assert.match(state.job, /Company: Northwind Technologies/);
 });
 
 test("field profil yang kosong tidak ditulis ke state", () => {

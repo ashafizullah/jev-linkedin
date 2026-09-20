@@ -109,7 +109,7 @@ const LANGUAGES = [
 const COUNTRY =
   "(?:indonesia|singapura|singapore|malaysia|jepang|japan|korea|australia|jerman|germany|belanda|netherlands|amerika|united states|usa|inggris|united kingdom|kanada|canada|uni emirat arab|uae|arab saudi|saudi arabia|thailand|vietnam|filipina|philippines|taiwan|hong ?kong|india)";
 
-// "Batam, Indonesia" — sengaja mensyaratkan bentuk Kota, Negara supaya baris
+// "Jakarta, Indonesia" — sengaja mensyaratkan bentuk Kota, Negara supaya baris
 // seperti "Bahasa: Indonesia (native), Inggris (profesional)" tidak ikut tertangkap.
 const LOCATION_LINE = new RegExp(`^[^,\\n]{2,40},\\s*${COUNTRY}\\.?$`, "i");
 const COUNTRY_ONLY_LINE = new RegExp(`^${COUNTRY}\\.?$`, "i");

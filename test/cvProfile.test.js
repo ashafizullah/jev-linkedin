@@ -3,10 +3,10 @@ import test from "node:test";
 
 import { EXTRACTABLE_FIELDS, extractProfile } from "../src/lib/cvProfile.js";
 
-const CV = `Adam Suchi Hafizullah
+const CV = `Budi Santoso
 Full Stack Developer
-Batam, Indonesia
-adam@example.com | +62 812-3456-7890
+Jakarta, Indonesia
+budi@example.com | +62 812-3456-7890
 
 RINGKASAN
 Full Stack Developer dengan 4 tahun pengalaman membangun produk web.
@@ -21,7 +21,7 @@ Backend Developer — Startup Fintech
 - Integrasi payment gateway, PostgreSQL, Redis.
 
 PENDIDIKAN
-S1 Teknik Informatika, Universitas Indonesia
+S1 Teknik Informatika, Universitas Nusantara
 
 KEAHLIAN
 TypeScript, React, Node.js, PostgreSQL, Redis, Docker, AWS, Git
@@ -33,8 +33,8 @@ test("mengambil field yang lazim ada di CV", () => {
   const profile = extractProfile(CV);
   assert.equal(profile.headline, "Full Stack Developer");
   assert.equal(profile.experienceYears, "4");
-  assert.equal(profile.location, "Batam, Indonesia");
-  assert.equal(profile.education, "S1 Teknik Informatika, Universitas Indonesia");
+  assert.equal(profile.location, "Jakarta, Indonesia");
+  assert.equal(profile.education, "S1 Teknik Informatika, Universitas Nusantara");
   assert.match(profile.languages, /Bahasa Indonesia \(native\), Inggris \(profesional\)/);
   assert.equal(
     profile.skills,
