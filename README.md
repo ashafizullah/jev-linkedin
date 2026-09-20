@@ -8,6 +8,13 @@
 A Chrome extension that scores **how well a LinkedIn job matches your CV**, and **how likely your
 application is to get through screening** — using the **Jev** decision model.
 
+Nothing about it is specific to software roles. The judgements asked of Jev are field-agnostic, and
+the CV auto-fill recognises skills, certifications and equipment across healthcare, finance,
+education, logistics, sales, design and the trades — not just engineering. That recognition is
+pattern matching over a finite list, not a dictionary of everything, so it will miss niche tooling.
+When it does, type the skills into the CV text or the core-skills field yourself; the analysis uses
+whatever is there either way.
+
 Jev is not a chat LLM. It is a "System One" model that takes a `state` plus typed questions and
 answers with **calibrated probabilities** instead of prose. So the match number here is not a
 guess parsed out of a sentence — it really is the probability distribution the model returned.

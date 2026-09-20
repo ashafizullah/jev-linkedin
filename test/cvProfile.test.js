@@ -124,3 +124,91 @@ test("hanya mengembalikan field yang memang bisa dibaca dari CV", () => {
     assert.equal(field in profile, false, `${field} tidak boleh ada`);
   }
 });
+
+// ---- lintas bidang: ekstraksi tidak boleh hanya bekerja untuk CV teknologi ----
+
+test("CV perawat terbaca", () => {
+  const profile = extractProfile(`Siti Rahayu
+Perawat
+Bandung, Indonesia
+
+RINGKASAN
+Perawat dengan 5 tahun pengalaman di ruang ICU dan IGD.
+
+KEAHLIAN
+keperawatan, ICU / IGD, BLS / ACLS, rekam medis
+
+PENDIDIKAN
+D3 Keperawatan, Politeknik Kesehatan Nusantara`);
+
+  assert.equal(profile.headline, "Perawat");
+  assert.equal(profile.experienceYears, "5");
+  assert.equal(profile.location, "Bandung, Indonesia");
+  assert.equal(profile.education, "D3 Keperawatan, Politeknik Kesehatan Nusantara");
+  for (const skill of ["Keperawatan", "ICU / IGD", "BLS / ACLS", "Rekam medis"]) {
+    assert.match(profile.skills, new RegExp(skill.replace("/", "\\/")), `kurang ${skill}`);
+  }
+});
+
+test("CV akuntan terbaca", () => {
+  const profile = extractProfile(`Andi Pratama
+Staff Akuntansi
+Surabaya, Indonesia
+
+RINGKASAN
+Akuntan dengan 3 tahun pengalaman menyusun laporan keuangan.
+
+KEAHLIAN
+akuntansi, perpajakan, Microsoft Excel, SAP, rekonsiliasi
+
+PENDIDIKAN
+S1 Akuntansi, Universitas Nusantara`);
+
+  assert.equal(profile.headline, "Staff Akuntansi");
+  assert.equal(profile.experienceYears, "3");
+  for (const skill of ["Akuntansi", "Perpajakan", "Laporan keuangan", "Rekonsiliasi", "SAP", "Microsoft Excel"]) {
+    assert.match(profile.skills, new RegExp(skill), `kurang ${skill}`);
+  }
+});
+
+test("CV guru terbaca", () => {
+  const profile = extractProfile(`Rina Wati
+Guru Matematika
+Yogyakarta, Indonesia
+
+KEAHLIAN
+kurikulum, manajemen kelas, RPP / lesson plan, e-learning
+
+PENDIDIKAN
+S1 Pendidikan Matematika, Universitas Nusantara`);
+
+  assert.equal(profile.headline, "Guru Matematika");
+  for (const skill of ["Kurikulum", "Manajemen kelas", "RPP / lesson plan", "E-learning"]) {
+    assert.match(profile.skills, new RegExp(skill), `kurang ${skill}`);
+  }
+});
+
+test("CV logistik terbaca", () => {
+  const profile = extractProfile(`Joko Susilo
+Driver
+Semarang, Indonesia
+
+KEAHLIAN
+manajemen inventaris, pengadaan, rantai pasok`);
+
+  assert.equal(profile.headline, "Driver");
+  for (const skill of ["Manajemen inventaris", "Pengadaan", "Rantai pasok"]) {
+    assert.match(profile.skills, new RegExp(skill), `kurang ${skill}`);
+  }
+});
+
+test("baris pendidikan yang menyebut institusi lebih dipilih", () => {
+  const profile = extractProfile(`Budi
+D3 ditempuh sambil bekerja
+D3 Akuntansi, Politeknik Nusantara`);
+  assert.equal(
+    profile.education,
+    "D3 Akuntansi, Politeknik Nusantara",
+    "baris dengan nama institusi harus menang",
+  );
+});

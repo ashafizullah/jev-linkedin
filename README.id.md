@@ -8,6 +8,13 @@
 Extension Chrome untuk menilai **seberapa cocok sebuah lowongan LinkedIn dengan CV kamu**, dan
 **seberapa besar kemungkinan lamaran kamu lolos seleksi** — memakai model keputusan **Jev**.
 
+Tidak ada bagian yang khusus untuk peran teknologi. Penilaian yang diminta ke Jev bersifat umum
+untuk bidang apa pun, dan pengisian otomatis dari CV mengenali keahlian, sertifikasi, serta alat di
+bidang kesehatan, keuangan, pendidikan, logistik, penjualan, desain, dan teknik lapangan — bukan
+hanya engineering. Pengenalan itu pencocokan pola atas daftar terbatas, bukan kamus segala hal,
+jadi alat yang jarang pasti akan terlewat. Kalau itu terjadi, tulis saja skill-nya sendiri di teks
+CV atau di kolom skill utama; analisis tetap memakainya.
+
 Jev bukan LLM chat. Dia model "System One" yang menerima `state` + pertanyaan bertipe dan
 membalas **probabilitas terkalibrasi**, bukan prosa. Jadi angka kecocokan di sini bukan tebakan
 dari kalimat yang diparsing, tapi memang distribusi probabilitas yang dikembalikan model.

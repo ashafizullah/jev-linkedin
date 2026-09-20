@@ -78,13 +78,166 @@ const SKILLS = [
   ["Power BI", [/\bpower\s*bi\b/i]],
 
   ["Figma", [/\bfigma\b/i]],
+
+  // ---- keuangan & akuntansi ----
+  ["Akuntansi", [/\bakuntansi\b/i, /\baccounting\b/i]],
+  ["Audit", [/\baudit(?:ing)?\b/i]],
+  ["Perpajakan", [/\bperpajakan\b/i, /\bperpa[jk]akan\b/i, /\btaxation\b/i, /\bbrevet\b/i]],
+  ["Laporan keuangan", [/\blaporan keuangan\b/i, /\bfinancial (?:report|statement)s?\b/i]],
+  ["Rekonsiliasi", [/\brekonsiliasi\b/i, /\breconciliation\b/i]],
+  ["SAP", [/\bsap\b/i]],
+  ["MYOB", [/\bmyob\b/i]],
+  ["Accurate", [/\baccurate\b/i]],
+  ["Payroll", [/\bpayroll\b/i, /\bpenggajian\b/i]],
+  ["PSAK / IFRS", [/\bpsak\b/i, /\bifrs\b/i]],
+  ["Budgeting", [/\bbudgeting\b/i, /\bpenganggaran\b/i, /\banggaran\b/i]],
+
+  // ---- administrasi & perkantoran ----
+  ["Microsoft Excel", [/\bexcel\b/i]],
+  ["Microsoft Word", [/\b(?:ms|microsoft)\s*word\b/i]],
+  ["PowerPoint", [/\bpower\s*point\b/i]],
+  ["Microsoft Office", [/\b(?:ms|microsoft)\s*office\b/i]],
+  ["Google Workspace", [/\bgoogle (?:workspace|sheets|docs|slides)\b/i]],
+  ["Data entry", [/\bdata entry\b/i]],
+  ["Administrasi", [/\badministrasi\b/i, /\badministration\b/i]],
+  ["Kearsipan", [/\bkearsipan\b/i, /\bfiling\b/i]],
+
+  // ---- sumber daya manusia ----
+  ["Rekrutmen", [/\brekrutmen\b/i, /\brecruit(?:ment|ing)\b/i, /\btalent acquisition\b/i]],
+  ["HRIS", [/\bhris\b/i]],
+  ["KPI / OKR", [/\bkpi\b/i, /\bokr\b/i]],
+  ["Penilaian kinerja", [/\bpenilaian kinerja\b/i, /\bperformance (?:management|appraisal)\b/i]],
+  ["Hubungan industrial", [/\bhubungan industrial\b/i, /\bindustrial relations\b/i]],
+
+  // ---- penjualan & pemasaran ----
+  ["SEO", [/\bseo\b/i]],
+  ["Google Ads", [/\bgoogle ads?\b/i, /\badwords\b/i, /\bsem\b/i]],
+  ["Google Analytics", [/\bgoogle analytics\b/i, /\bga4\b/i]],
+  ["Media sosial", [/\bmedia sosial\b/i, /\bsocial media\b/i]],
+  ["Copywriting", [/\bcopywrit(?:er|ing)\b/i]],
+  ["Content marketing", [/\bcontent marketing\b/i]],
+  ["CRM", [/\bcrm\b/i]],
+  ["Salesforce", [/\bsalesforce\b/i]],
+  ["HubSpot", [/\bhubspot\b/i]],
+  ["Riset pasar", [/\briset pasar\b/i, /\bmarket research\b/i]],
+  ["Negosiasi", [/\bnegosiasi\b/i, /\bnegotiation\b/i]],
+  ["Merchandising", [/\bmerchandis/i]],
+
+  // ---- kesehatan ----
+  ["Keperawatan", [/\bkeperawatan\b/i, /\bnursing\b/i, /\bperawat\b/i]],
+  ["Asuhan keperawatan", [/\basuhan keperawatan\b/i]],
+  ["Rekam medis", [/\brekam medis\b/i, /\bmedical record/i]],
+  ["Farmasi", [/\bfarmasi\b/i, /\bpharmacy\b/i, /\bapoteker\b/i]],
+  ["BLS / ACLS", [/\bbls\b/i, /\bacls\b/i, /\bbtcls\b/i]],
+  ["ICU / IGD", [/\bicu\b/i, /\bigd\b/i, /\bemergency room\b/i]],
+  ["Flebotomi", [/\bflebotomi\b/i, /\bphlebotomy\b/i]],
+  ["USG", [/\busg\b/i, /\bultrasound\b/i]],
+  ["Pemeriksaan fisik", [/\bpemeriksaan fisik\b/i, /\bphysical examination\b/i]],
+
+  // ---- pendidikan ----
+  ["Kurikulum", [/\bkurikulum\b/i, /\bcurriculum\b/i]],
+  ["Manajemen kelas", [/\bmanajemen kelas\b/i, /\bclassroom management\b/i]],
+  ["RPP / lesson plan", [/\brpp\b/i, /\blesson plan/i]],
+  ["E-learning", [/\be-?learning\b/i, /\bmoodle\b/i]],
+  ["Penelitian", [/\bpenelitian\b/i]],
+
+  // ---- desain & kreatif ----
+  ["Adobe Photoshop", [/\bphotoshop\b/i]],
+  ["Adobe Illustrator", [/\billustrator\b/i]],
+  ["InDesign", [/\bindesign\b/i]],
+  ["Canva", [/\bcanva\b/i]],
+  ["UI/UX", [/\bui\/ux\b/i, /\buser experience\b/i]],
+  ["Wireframing", [/\bwirefram/i]],
+  ["Video editing", [/\bvideo edit/i, /\bpremiere pro\b/i, /\bcapcut\b/i]],
+
+  // ---- teknik, manufaktur, dan lapangan ----
+  ["AutoCAD", [/\bautocad\b/i]],
+  ["SolidWorks", [/\bsolidworks\b/i]],
+  ["CATIA", [/\bcatia\b/i]],
+  ["PLC", [/\bplc\b/i]],
+  ["SCADA", [/\bscada\b/i]],
+  ["K3 / HSE", [/\bk3\b/i, /\bhse\b/i, /\bkeselamatan kerja\b/i]],
+  ["RAB / estimasi biaya", [/\brab\b/i, /\bcost estimat/i]],
+  ["Manajemen proyek", [/\bmanajemen proyek\b/i, /\bproject management\b/i]],
+  ["Pengadaan", [/\bpengadaan\b/i, /\bprocurement\b/i]],
+  ["Manajemen inventaris", [/\binventaris\b/i, /\binventory\b/i, /\bwarehouse\b/i]],
+  ["Rantai pasok", [/\brantai pasok\b/i, /\bsupply chain\b/i]],
+  ["Quality control", [/\bquality control\b/i, /\bqc\b/i]],
+
+  // ---- perhotelan, kuliner, dan layanan ----
+  ["HACCP / food safety", [/\bhaccp\b/i, /\bfood safety\b/i]],
+  ["Barista", [/\bbarista\b/i]],
+  ["Layanan pelanggan", [/\bcustomer service\b/i, /\blayanan pelanggan\b/i, /\bpelayanan pelanggan\b/i]],
+  ["Housekeeping", [/\bhousekeeping\b/i]],
+
+  // ---- hukum & kepatuhan ----
+  ["Drafting kontrak", [/\bdrafting\b/i, /\bperjanjian\b/i]],
+  ["Kepatuhan", [/\bkepatuhan\b/i, /\bcompliance\b/i]],
+  ["ISO", [/\biso\s?\d{4,5}\b/i]],
+
+  // ---- umum, berlaku di bidang apa pun ----
+  ["Analisis data", [/\banalisis data\b/i, /\bdata analysis\b/i]],
+  ["SPSS", [/\bspss\b/i]],
+  ["Statistik", [/\bstatistik\b/i, /\bstatistics\b/i]],
+  ["Agile / Scrum", [/\bagile\b/i, /\bscrum\b/i]],
+  ["Jira", [/\bjira\b/i]],
+  ["Kepemimpinan", [/\bkepemimpinan\b/i, /\bleadership\b/i]],
+  ["Komunikasi", [/\bkomunikasi\b/i, /\bcommunication\b/i]],
 ];
 
 const DEGREES =
-  /\b(s1|s2|s3|d3|d4|sarjana|magister|doktor|bachelor|master|phd|doctorate|diploma)\b/i;
+  /\b(s1|s2|s3|d1|d2|d3|d4|smk|stm|sma|sarjana|magister|doktor|profesi|bachelor|master|msc|mba|phd|doctorate|diploma|associate)\b/i;
 
-const ROLE_WORDS =
-  /\b(engineer|developer|programmer|designer|architect|analyst|scientist|manager|lead|head|consultant|specialist|administrator|devops|frontend|front-end|backend|back-end|full\s*stack|fullstack|data|product|marketing|sales|finance|accountant|teacher|guru|dosen|staff|supervisor|intern|magang)\b/i;
+// Institusi, dipakai untuk memilih baris pendidikan yang paling meyakinkan.
+const SCHOOLS =
+  /\b(universitas|university|institut|institute|politeknik|polytechnic|akademi|academy|sekolah|school|stikes|stie|stmik|smk|sma|fakultas)\b/i;
+
+// Judul peran lintas bidang. Dipakai untuk menebak headline dari CV, jadi
+// sengaja luas: bukan hanya peran teknologi.
+const ROLE_WORDS = new RegExp(
+  `\\b(?:${[
+    // teknologi
+    "engineer", "developer", "programmer", "devops", "frontend", "front-end", "backend",
+    "back-end", "full\\s*stack", "fullstack", "tester", "qa", "scientist", "architect",
+    "data", "analis", "analyst",
+    // bisnis, kantor, manajemen
+    "manager", "supervisor", "lead", "head", "director", "coordinator", "officer", "staff",
+    "executive", "administrator", "admin", "secretary", "sekretaris", "receptionist",
+    "resepsionis", "clerk", "assistant", "asisten", "konsultan", "consultant", "specialist",
+    "spesialis", "pengawas", "kepala",
+    // keuangan
+    "accountant", "akuntan", "finance", "auditor", "tax", "pajak", "teller", "kasir", "cashier",
+    "bookkeeper", "bendahara",
+    // penjualan & pemasaran
+    "sales", "marketing", "pemasaran", "business\\s*development", "account\\s*executive", "brand",
+    "public\\s*relations", "humas", "copywriter", "writer", "penulis", "content", "seo",
+    "promotor", "merchandiser",
+    // SDM
+    "hr", "human\\s*resources", "recruiter", "rekrutmen", "payroll", "people",
+    // kesehatan
+    "nurse", "perawat", "dokter", "doctor", "bidan", "apoteker", "pharmacist", "radiographer",
+    "terapis", "therapist", "caregiver", "paramedis", "farmasi", "nutrisionis", "dietisien",
+    // pendidikan
+    "teacher", "guru", "dosen", "lecturer", "tutor", "instruktur", "instructor", "pengajar",
+    // desain & kreatif
+    "designer", "desainer", "illustrator", "animator", "editor", "videographer", "photographer",
+    "fotografer", "creator", "penyiar",
+    // hukum
+    "lawyer", "advokat", "legal", "notaris", "paralegal", "compliance",
+    // perhotelan & kuliner
+    "chef", "koki", "barista", "waiter", "waitress", "pramusaji", "housekeeping",
+    "front\\s*office", "hotel", "resepsionis",
+    // logistik & manufaktur
+    "driver", "sopir", "kurir", "courier", "warehouse", "gudang", "logistik", "supply\\s*chain",
+    "procurement", "purchasing", "operator", "teknisi", "technician", "mekanik", "mechanic",
+    "welder", "las", "produksi", "quality\\s*control",
+    // jasa & lapangan
+    "security", "satpam", "cleaning", "gardener", "tukang", "montir",
+    // umum
+    "magang", "intern", "trainee", "freelance", "founder", "owner", "pemilik",
+  ].join("|")})\\b`,
+  "i",
+);
 
 const LANGUAGES = [
   ["Indonesia", [/\bindonesia(n)?\b/i, /\bbahasa indonesia\b/i]],
@@ -180,11 +333,10 @@ function guessLocation(allLines) {
 }
 
 function guessEducation(allLines) {
-  for (const line of allLines) {
-    if (line.length > 120) continue;
-    if (DEGREES.test(line)) return line;
-  }
-  return "";
+  const candidates = allLines.filter((line) => line.length <= 120 && DEGREES.test(line));
+  // Baris yang juga menyebut institusi lebih meyakinkan. Tanpa ini, judul seperti
+  // "Dokter Spesialis Anak" bisa terbaca sebagai pendidikan.
+  return candidates.find((line) => SCHOOLS.test(line)) ?? candidates[0] ?? "";
 }
 
 function guessLanguages(allLines) {

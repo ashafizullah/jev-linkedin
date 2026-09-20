@@ -28,7 +28,7 @@
       "panel.matchUnit": "cocok",
       "panel.confidence": "keyakinan model {percent}%",
       "panel.screeningTitle": "Peluang lolos seleksi",
-      "panel.passScreening": "Sampai interview teknis",
+      "panel.passScreening": "Sampai tes keahlian",
       "panel.offerChance": "Kemungkinan dapat offer",
       "panel.mostLikelyStop": "paling mungkin berhenti di: {stage}",
       "panel.signalsTitle": "Sinyal yang dipakai",
@@ -92,7 +92,7 @@
         "Kalau lamaran kandidat ditolak, apa penyebab paling mungkin? Pilih satu faktor tunggal yang paling menentukan. Bila sinyal peluang menunjukkan lowongan sudah lama dibuka atau sudah banyak pelamar, persaingan bisa jadi penyebabnya meskipun kualifikasi kandidat sudah cukup.",
 
       "question.gap.experience_years": "Pengalaman kerja relevan kurang dari yang diminta",
-      "question.gap.tech_stack": "Tidak menguasai teknologi, framework, atau tool spesifik yang diminta",
+      "question.gap.tech_stack": "Tidak menguasai keahlian, alat, atau sertifikasi spesifik yang diminta",
       "question.gap.domain_industry": "Belum punya pengalaman di industri atau domain produk tersebut",
       "question.gap.seniority": "Level senioritas atau cakupan tanggung jawab tidak sepadan",
       "question.gap.location": "Lokasi, izin kerja, atau zona waktu tidak memenuhi syarat",
@@ -107,7 +107,8 @@
         "Jika kandidat ini melamar sekarang, seberapa jauh tahap paling akhir yang kemungkinan besar dia capai dalam proses rekrutmen lowongan ini? Kalau ada data sinyal peluang seperti jumlah pelamar, umur postingan, status tinjauan recruiter, atau koneksi kandidat di perusahaan, pakai itu untuk menimbang seberapa ketat persaingannya.",
       "question.outcome.auto_reject": "Ditolak atau tersaring otomatis sebelum dibaca manusia",
       "question.outcome.recruiter_screen": "Recruiter akan membalas dan melakukan screening awal",
-      "question.outcome.technical_interview": "Lolos screening dan sampai ke interview teknis",
+      "question.outcome.technical_interview":
+        "Lolos screening dan sampai ke tes keahlian atau interview teknis",
       "question.outcome.final_round": "Sampai ke interview final atau dengan manajemen",
       "question.outcome.offer": "Kemungkinan besar menerima tawaran kerja",
 
@@ -139,9 +140,9 @@
       "question.hasDomainExperience.false": "Tidak punya pengalaman di domain tersebut",
 
       "question.hasRequiredTech.instructions":
-        "Apakah kandidat menguasai teknologi, framework, dan tool utama yang disebut lowongan ini?",
+        "Apakah kandidat menguasai keahlian, alat, dan sertifikasi utama yang disebut lowongan ini?",
       "question.hasRequiredTech.true": "Menguasai sebagian besar yang disebut",
-      "question.hasRequiredTech.false": "Tidak menguasai teknologi inti yang disebut",
+      "question.hasRequiredTech.false": "Tidak menguasai keahlian inti yang disebut",
 
       "question.seniorityFit.instructions":
         "Seberapa pas level senioritas kandidat dengan level yang dicari lowongan ini?",
@@ -173,7 +174,7 @@
 
       "funnel.auto_reject": "Tersaring otomatis",
       "funnel.recruiter_screen": "Screening recruiter",
-      "funnel.technical_interview": "Interview teknis",
+      "funnel.technical_interview": "Tes keahlian",
       "funnel.final_round": "Interview final",
       "funnel.offer": "Tawaran kerja",
 
@@ -181,7 +182,7 @@
       "check.meets_location": "Lokasi / izin kerja",
       "check.meets_language": "Syarat bahasa",
       "check.has_domain_experience": "Pengalaman di domain yang sama",
-      "check.has_required_tech": "Teknologi & tool yang diminta",
+      "check.has_required_tech": "Keahlian & alat yang diminta",
 
       "verdict.priority": "Prioritaskan",
       "verdict.apply": "Layak dilamar",
@@ -235,11 +236,13 @@
       "options.autofill.none": "Tidak ada field baru yang bisa diisi dari CV ini.",
       "options.autofill.skipped": "{count} field dilewati karena sudah kamu isi.",
       "options.headline.label": "Ringkasan peran",
+      "options.headline.placeholder": "Perawat, Akuntan, Developer…",
       "options.experienceYears.label": "Total pengalaman (tahun)",
       "options.location.label": "Lokasi kamu sekarang",
       "options.languages.label": "Bahasa",
       "options.education.label": "Pendidikan tertinggi",
       "options.skills.label": "Skill utama (pisahkan dengan koma)",
+      "options.skills.placeholder": "Excel, komunikasi, manajemen proyek…",
 
       "options.history.title": "3. Riwayat analisis",
       "options.history.empty": "Belum ada analisis.",
@@ -329,7 +332,7 @@
       "panel.matchUnit": "match",
       "panel.confidence": "model confidence {percent}%",
       "panel.screeningTitle": "Odds of passing screening",
-      "panel.passScreening": "Reaching a technical interview",
+      "panel.passScreening": "Reaching a skills test",
       "panel.offerChance": "Chance of an offer",
       "panel.mostLikelyStop": "most likely stops at: {stage}",
       "panel.signalsTitle": "Evidence used",
@@ -393,7 +396,7 @@
         "If this application were rejected, what is the single most likely reason? Pick one dominant factor. If the opportunity signals show the posting is old or already has many applicants, competition can be the reason even when the candidate's qualifications are sufficient.",
 
       "question.gap.experience_years": "Relevant work experience falls short of what is required",
-      "question.gap.tech_stack": "Missing specific technologies, frameworks or tools the job lists",
+      "question.gap.tech_stack": "Missing specific skills, tools or certifications the job lists",
       "question.gap.domain_industry": "No experience in the job's industry or product domain",
       "question.gap.seniority": "Seniority level or scope of ownership does not match",
       "question.gap.location": "Location, work authorisation or time zone does not satisfy the requirement",
@@ -407,7 +410,8 @@
         "If this candidate applied now, how far along the hiring funnel would they most likely get? If opportunity signals are available — applicant count, posting age, whether a recruiter is actively reviewing, or the candidate's connections at the company — use them to weigh how competitive the pool is.",
       "question.outcome.auto_reject": "Rejected or filtered out before a human reads it",
       "question.outcome.recruiter_screen": "A recruiter would reply and run an initial screen",
-      "question.outcome.technical_interview": "Would pass screening and reach a technical interview",
+      "question.outcome.technical_interview":
+        "Would pass screening and reach a skills test or technical interview",
       "question.outcome.final_round": "Would reach a final or management interview",
       "question.outcome.offer": "Would most likely receive an offer",
 
@@ -441,9 +445,9 @@
       "question.hasDomainExperience.false": "No experience in that domain",
 
       "question.hasRequiredTech.instructions":
-        "Does the candidate know the core technologies, frameworks and tools this job lists?",
-      "question.hasRequiredTech.true": "Knows most of what is listed",
-      "question.hasRequiredTech.false": "Does not know the core technologies listed",
+        "Does the candidate have the core skills, tools and certifications this job lists?",
+      "question.hasRequiredTech.true": "Has most of what is listed",
+      "question.hasRequiredTech.false": "Does not have the core skills listed",
 
       "question.seniorityFit.instructions":
         "How well does the candidate's seniority level fit the level this job is hiring for?",
@@ -475,7 +479,7 @@
 
       "funnel.auto_reject": "Filtered out",
       "funnel.recruiter_screen": "Recruiter screen",
-      "funnel.technical_interview": "Technical interview",
+      "funnel.technical_interview": "Skills test",
       "funnel.final_round": "Final interview",
       "funnel.offer": "Offer",
 
@@ -483,7 +487,7 @@
       "check.meets_location": "Location & work authorisation",
       "check.meets_language": "Language requirement",
       "check.has_domain_experience": "Same-domain experience",
-      "check.has_required_tech": "Required tech & tools",
+      "check.has_required_tech": "Required skills & tools",
 
       "verdict.priority": "Prioritise",
       "verdict.apply": "Worth applying",
@@ -537,11 +541,13 @@
       "options.autofill.none": "Nothing new could be filled from this CV.",
       "options.autofill.skipped": "{count} fields skipped because you already filled them.",
       "options.headline.label": "Role summary",
+      "options.headline.placeholder": "Nurse, Accountant, Developer…",
       "options.experienceYears.label": "Total experience (years)",
       "options.location.label": "Where you are based",
       "options.languages.label": "Languages",
       "options.education.label": "Highest education",
       "options.skills.label": "Core skills (comma separated)",
+      "options.skills.placeholder": "Excel, communication, project management…",
 
       "options.history.title": "3. Analysis history",
       "options.history.empty": "No analyses yet.",
