@@ -155,6 +155,11 @@ Field yang kosong memang tidak dikirim ke Jev, jadi analisis tetap jalan hanya d
 
 ## Pakai
 
+Klik **ikon extension** untuk tombol pintasannya. **Buka lowongan LinkedIn** langsung membuka
+daftar yang LinkedIn susun dari preferensi akunmu — extension tidak pernah menebak preferensimu,
+ia hanya membuka halaman yang memang sudah LinkedIn bangun dari preferensi itu. Dua tombol lain
+membuka dashboard dan Settings.
+
 Buka halaman detail lowongan di LinkedIn. Panel muncul di kanan bawah:
 
 - Kalau lowongan itu sudah pernah dianalisis, hasilnya langsung tampil dari cache.

@@ -260,8 +260,9 @@
       "popup.cvMissing": "CV belum diunggah",
       "popup.modelLabel": "Model:",
       "popup.historyLabel": "Hasil tersimpan:",
+      "popup.openJobs": "Buka lowongan LinkedIn",
       "popup.hint":
-        "Buka halaman lowongan di LinkedIn, lalu pakai panel di kanan bawah untuk menilai kecocokan.",
+        "Tombol pertama membuka daftar lowongan yang LinkedIn susun sendiri dari preferensi akunmu. Buka salah satu lowongan, lalu pakai panel di kanan bawah untuk menilai kecocokannya.",
       "popup.openSettings": "Buka Settings",
 
       "batch.start": "Analisis {count} lowongan di halaman ini",
@@ -560,8 +561,9 @@
       "popup.cvMissing": "No CV uploaded",
       "popup.modelLabel": "Model:",
       "popup.historyLabel": "Saved results:",
+      "popup.openJobs": "Open LinkedIn jobs",
       "popup.hint":
-        "Open a job posting on LinkedIn, then use the panel in the bottom right to score the match.",
+        "The first button opens the job list LinkedIn builds from your own account preferences. Open a posting, then use the panel in the bottom right to score the match.",
       "popup.openSettings": "Open settings",
 
       "batch.start": "Analyze {count} jobs on this page",

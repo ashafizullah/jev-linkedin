@@ -154,6 +154,11 @@ Empty fields are simply omitted from what is sent to Jev, so the analysis runs o
 
 ## Usage
 
+Click the **toolbar icon** for the shortcut buttons. **Open LinkedIn jobs** takes you straight to
+the list LinkedIn assembles from your own account preferences — the extension never tries to guess
+your preferences, it just opens the page LinkedIn already builds from them. The other two buttons
+open the dashboard and Settings.
+
 Open a job detail page on LinkedIn. A panel appears in the bottom right:
 
 - If the job was analysed before, the result shows immediately from cache.
