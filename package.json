@@ -1,0 +1,15 @@
+{
+  "name": "jev-linkedin",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Chrome extension yang menilai kecocokan lowongan LinkedIn dengan profil kamu memakai model keputusan Jev.",
+  "type": "module",
+  "scripts": {
+    "vendor": "node scripts/vendor-deps.mjs",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "devDependencies": {
+    "mammoth": "^1.8.0",
+    "pdfjs-dist": "^4.7.76"
+  }
+}

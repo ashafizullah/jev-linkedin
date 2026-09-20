@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jev Job Match — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="page-head">
+        <span class="logo"></span>
+        <div>
+          <h1>Jev Job Match</h1>
+          <p class="muted" data-i18n="options.subtitle"></p>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2 data-i18n="options.language.label"></h2>
+        <div class="row">
+          <select id="locale">
+            <option value="auto" data-i18n="options.language.auto"></option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="options.connection.title"></h2>
+        <p class="muted" data-i18n="options.connection.hint"></p>
+
+        <label for="baseUrl" data-i18n="options.baseUrl.label"></label>
+        <input id="baseUrl" type="url" spellcheck="false" placeholder="https://api.typesafe.ai/v1" />
+
+        <label for="apiKey" data-i18n="options.apiKey.label"></label>
+        <div class="row">
+          <input id="apiKey" type="password" spellcheck="false" autocomplete="off" data-i18n-placeholder="options.apiKey.placeholder" />
+          <button id="toggleKey" class="btn ghost" type="button" data-i18n="options.apiKey.show"></button>
+        </div>
+        <p class="muted small" data-i18n="options.apiKey.hint"></p>
+
+        <label for="model" data-i18n="options.model.label"></label>
+        <div class="row">
+          <input id="model" list="modelList" spellcheck="false" placeholder="jev-latest" />
+          <datalist id="modelList"></datalist>
+          <button id="loadModels" class="btn ghost" type="button" data-i18n="options.model.load"></button>
+        </div>
+
+        <div class="actions">
+          <button id="test" class="btn ghost" type="button" data-i18n="options.test"></button>
+          <span id="connStatus" class="status"></span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="options.cv.title"></h2>
+        <p class="muted" data-i18n="options.cv.hint"></p>
+
+        <div id="dropzone" class="dropzone" tabindex="0">
+          <input id="cvFile" type="file" accept=".pdf,.docx,.txt,.md" hidden />
+          <strong data-i18n="options.cv.dropTitle"></strong>
+          <span class="muted small" data-i18n="options.cv.dropHint"></span>
+        </div>
+
+        <div id="cvStatus" class="status"></div>
+        <textarea id="cvText" rows="10" spellcheck="false" data-i18n-placeholder="options.cv.placeholder"></textarea>
+        <p class="muted small" id="cvCount"></p>
+
+        <h3 class="subhead" data-i18n="options.details.title"></h3>
+        <p class="muted" data-i18n="options.details.hint"></p>
+
+        <div class="actions">
+          <button id="autofill" class="btn ghost" type="button" data-i18n="options.autofill.button"></button>
+        </div>
+        <div id="autofillStatus" class="status"></div>
+
+        <div class="grid">
+          <div>
+            <label for="headline" data-i18n="options.headline.label"></label>
+            <input id="headline" placeholder="Full Stack Developer" />
+          </div>
+          <div>
+            <label for="experienceYears" data-i18n="options.experienceYears.label"></label>
+            <input id="experienceYears" type="number" min="0" step="1" placeholder="4" />
+          </div>
+          <div>
+            <label for="location" data-i18n="options.location.label"></label>
+            <input id="location" placeholder="Batam, Indonesia" />
+          </div>
+          <div>
+            <label for="languages" data-i18n="options.languages.label"></label>
+            <input id="languages" />
+          </div>
+          <div>
+            <label for="education" data-i18n="options.education.label"></label>
+            <input id="education" />
+          </div>
+        </div>
+
+        <label for="skills" data-i18n="options.skills.label"></label>
+        <input id="skills" placeholder="TypeScript, React, Node.js, PostgreSQL, Docker" />
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="options.history.title"></h2>
+        <div id="historyList" class="history"></div>
+        <div class="actions">
+          <button id="openDashboard" class="btn ghost" type="button" data-i18n="dashboard.open"></button>
+          <button id="clearCache" class="btn ghost" type="button" data-i18n="options.history.clear"></button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <button id="save" class="btn" type="button" data-i18n="options.save"></button>
+        <span id="saveStatus" class="status"></span>
+      </footer>
+    </main>
+
+    <script src="../../vendor/mammoth/mammoth.browser.min.js"></script>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jev Job Match — Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="page-head">
+        <span class="logo"></span>
+        <div>
+          <h1 data-i18n="dashboard.heading"></h1>
+          <p class="muted" data-i18n="dashboard.subtitle"></p>
+        </div>
+        <div class="head-actions">
+          <button id="openOptions" class="btn ghost" type="button" data-i18n="common.settings"></button>
+          <button id="clear" class="btn ghost" type="button" data-i18n="dashboard.clear"></button>
+        </div>
+      </header>
+
+      <section class="card" id="batchCard">
+        <h2 data-i18n="dashboard.batchTitle"></h2>
+        <div id="batchBody"></div>
+      </section>
+
+      <section class="controls">
+        <input id="search" type="search" data-i18n-placeholder="dashboard.search" />
+        <label class="inline">
+          <span data-i18n="dashboard.sort"></span>
+          <select id="sort">
+            <option value="match" data-i18n="dashboard.sort.match"></option>
+            <option value="recent" data-i18n="dashboard.sort.recent"></option>
+            <option value="company" data-i18n="dashboard.sort.company"></option>
+          </select>
+        </label>
+        <label class="inline">
+          <span data-i18n="dashboard.filter"></span>
+          <select id="verdict">
+            <option value="" data-i18n="dashboard.filter.all"></option>
+            <option value="priority" data-i18n="verdict.priority"></option>
+            <option value="apply" data-i18n="verdict.apply"></option>
+            <option value="maybe" data-i18n="verdict.maybe"></option>
+            <option value="skip" data-i18n="verdict.skip"></option>
+          </select>
+        </label>
+        <span id="count" class="muted"></span>
+      </section>
+
+      <section class="card">
+        <table id="table">
+          <thead>
+            <tr>
+              <th data-i18n="dashboard.col.job"></th>
+              <th class="num" data-i18n="dashboard.col.match"></th>
+              <th class="num" data-i18n="dashboard.col.screening"></th>
+              <th class="num" data-i18n="dashboard.col.offer"></th>
+              <th data-i18n="dashboard.col.verdict"></th>
+              <th data-i18n="dashboard.col.reason"></th>
+              <th data-i18n="dashboard.col.when"></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div id="empty" class="empty"></div>
+      </section>
+    </main>
+
+    <script type="module" src="dashboard.js"></script>
+  </body>
+</html>

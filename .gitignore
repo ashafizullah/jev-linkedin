@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+*.log
+
+# State tooling lokal, bukan bagian dari proyek.
+.commandcode/
+
+# Jangan pernah ikut ter-commit. Kunci API disimpan di chrome.storage oleh
+# extension, bukan di repo, tapi jaring ini mencegah kecelakaan.
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+cookies.json

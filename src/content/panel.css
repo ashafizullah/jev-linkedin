@@ -1,0 +1,423 @@
+#jev-job-match-panel,
+#jev-job-match-panel * {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#jev-job-match-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2147483000;
+  width: 344px;
+  max-height: min(76vh, 720px);
+  display: flex;
+  flex-direction: column;
+  background: #0e1a2f;
+  color: #e8eefc;
+  border: 1px solid #1f3358;
+  border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(6, 12, 26, 0.55);
+  font-size: 13px;
+  line-height: 1.45;
+  overflow: hidden;
+}
+
+#jev-job-match-panel .jev-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, #14243f, #0e1a2f);
+  border-bottom: 1px solid #1f3358;
+  flex: 0 0 auto;
+}
+
+#jev-job-match-panel .jev-logo {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+  border-right-color: #facc15;
+  flex: 0 0 auto;
+}
+
+#jev-job-match-panel .jev-header strong {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  flex: 1 1 auto;
+}
+
+#jev-job-match-panel .jev-icon-btn {
+  background: transparent;
+  border: 0;
+  color: #9fb3d4;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+#jev-job-match-panel .jev-icon-btn:hover {
+  background: #1f3358;
+  color: #e8eefc;
+}
+
+#jev-job-match-panel .jev-body {
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#jev-job-match-panel.jev-collapsed .jev-body {
+  display: none;
+}
+
+#jev-job-match-panel .jev-job-title {
+  font-size: 12px;
+  color: #c3d3ee;
+  border-left: 2px solid #38bdf8;
+  padding-left: 8px;
+}
+
+#jev-job-match-panel .jev-topbar {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#jev-job-match-panel .jev-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #7dd3fc;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#jev-job-match-panel .jev-link:hover {
+  color: #bae6fd;
+  text-decoration: underline;
+}
+
+#jev-job-match-panel .jev-muted {
+  color: #8fa5c7;
+  font-size: 11.5px;
+}
+
+#jev-job-match-panel .jev-error {
+  color: #fca5a5;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.28);
+  border-radius: 9px;
+  padding: 9px 10px;
+}
+
+#jev-job-match-panel .jev-verdict {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 11.5px;
+  border: 1px solid transparent;
+}
+
+#jev-job-match-panel .jev-verdict-priority {
+  background: rgba(34, 197, 94, 0.14);
+  color: #86efac;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+#jev-job-match-panel .jev-verdict-apply {
+  background: rgba(56, 189, 248, 0.14);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+#jev-job-match-panel .jev-verdict-maybe {
+  background: rgba(250, 204, 21, 0.14);
+  color: #fde68a;
+  border-color: rgba(250, 204, 21, 0.4);
+}
+
+#jev-job-match-panel .jev-verdict-skip {
+  background: rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+#jev-job-match-panel .jev-match {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#jev-job-match-panel .jev-ring {
+  --jev-value: 0deg;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  background: conic-gradient(#38bdf8 var(--jev-value), #24395f 0);
+  display: grid;
+  place-items: center;
+}
+
+#jev-job-match-panel .jev-ring-inner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #0e1a2f;
+  display: grid;
+  place-items: center;
+  line-height: 1.1;
+}
+
+#jev-job-match-panel .jev-ring-inner b {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+#jev-job-match-panel .jev-ring-inner span {
+  font-size: 10px;
+  color: #8fa5c7;
+}
+
+#jev-job-match-panel .jev-match-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#jev-job-match-panel .jev-match-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#jev-job-match-panel .jev-section {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 10px;
+  border-top: 1px solid #1b2d4d;
+}
+
+#jev-job-match-panel .jev-section h4 {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8fa5c7;
+}
+
+#jev-job-match-panel .jev-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+#jev-job-match-panel .jev-stat-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+#jev-job-match-panel .jev-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: #1b2d4d;
+  overflow: hidden;
+}
+
+#jev-job-match-panel .jev-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+#jev-job-match-panel .jev-tone-gauge {
+  background: #38bdf8;
+}
+
+#jev-job-match-panel .jev-tone-accent {
+  background: #facc15;
+}
+
+#jev-job-match-panel .jev-checks,
+#jev-job-match-panel .jev-gaps,
+#jev-job-match-panel .jev-signals {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#jev-job-match-panel .jev-signals li {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  gap: 8px;
+  font-size: 12px;
+}
+
+#jev-job-match-panel .jev-signal-label {
+  color: #8fa5c7;
+}
+
+#jev-job-match-panel .jev-signal-value {
+  color: #c3d3ee;
+}
+
+#jev-job-match-panel .jev-gaps {
+  counter-reset: jev-gap;
+}
+
+#jev-job-match-panel .jev-checks li,
+#jev-job-match-panel .jev-gaps li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+}
+
+#jev-job-match-panel .jev-gaps li {
+  padding-left: 2px;
+}
+
+#jev-job-match-panel .jev-checks .jev-check-label,
+#jev-job-match-panel .jev-gaps li span {
+  flex: 1 1 auto;
+  color: #c3d3ee;
+}
+
+#jev-job-match-panel .jev-checks b,
+#jev-job-match-panel .jev-gaps b {
+  font-variant-numeric: tabular-nums;
+  color: #e8eefc;
+  font-size: 11.5px;
+}
+
+#jev-job-match-panel .jev-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+#jev-job-match-panel .jev-ok .jev-dot {
+  background: #22c55e;
+}
+
+#jev-job-match-panel .jev-bad .jev-dot {
+  background: #f87171;
+}
+
+#jev-job-match-panel .jev-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#jev-job-match-panel .jev-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#jev-job-match-panel .jev-row .jev-btn {
+  flex: 1 1 auto;
+}
+
+#jev-job-match-panel .jev-select {
+  background: #0c1729;
+  color: #e8eefc;
+  border: 1px solid #2b4066;
+  border-radius: 8px;
+  padding: 7px 8px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#jev-job-match-panel .jev-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 11.5px;
+  color: #8fa5c7;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+#jev-job-match-panel .jev-check input {
+  margin: 2px 0 0;
+  accent-color: #38bdf8;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+#jev-job-match-panel .jev-divider {
+  border-top: 1px solid #1b2d4d;
+  margin: 2px 0;
+}
+
+#jev-job-match-panel .jev-btn {
+  background: #38bdf8;
+  color: #07182c;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#jev-job-match-panel .jev-btn:hover {
+  background: #7dd3fc;
+}
+
+#jev-job-match-panel .jev-btn-ghost {
+  background: transparent;
+  color: #c3d3ee;
+  border-color: #2b4066;
+}
+
+#jev-job-match-panel .jev-btn-ghost:hover {
+  background: #1b2d4d;
+}
+
+#jev-job-match-panel .jev-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid #1b2d4d;
+}
+
+#jev-job-match-panel .jev-footer .jev-btn {
+  align-self: flex-start;
+  background: transparent;
+  color: #c3d3ee;
+  border-color: #2b4066;
+}
+
+#jev-job-match-panel .jev-footer .jev-btn:hover {
+  background: #1b2d4d;
+}
+
+#jev-job-match-panel .jev-disclaimer {
+  margin: 0;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: #7387a8;
+  border-top: 1px dashed #23385c;
+  padding-top: 8px;
+}
