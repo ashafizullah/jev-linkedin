@@ -39,6 +39,9 @@ async function init() {
   document.getElementById("model").textContent = settings.model || "—";
   document.getElementById("history").textContent = String((await listCachedAnalyses()).length);
   document.getElementById("openOptions").addEventListener("click", () => chrome.runtime.openOptionsPage());
+  document.getElementById("openDashboard").addEventListener("click", () => {
+    chrome.tabs.create({ url: chrome.runtime.getURL("src/dashboard/dashboard.html") });
+  });
 }
 
 init();

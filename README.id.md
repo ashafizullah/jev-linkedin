@@ -204,12 +204,12 @@ Dua hal penting soal cara kerjanya:
 
 ## Dashboard
 
-**Settings → Buka dashboard** (atau tombol di akhir batch) membuka halaman berisi semua
-lowongan yang pernah dinilai: **urutannya default dari yang paling baru dianalisis**, bisa
-diurutkan berdasarkan kecocokan, waktu, atau perusahaan; disaring berdasarkan keputusan; dicari
-berdasarkan posisi atau perusahaan; dan tiap barisnya bertaut ke lowongan aslinya. Dashboard juga
-menampilkan batch yang sedang berjalan, bisa menghentikannya, dan menyegarkan diri sendiri selama
-batch berjalan.
+**Ikon extension → Buka dashboard** (atau tombol di halaman Settings, atau tombol di akhir batch)
+membuka halaman berisi semua lowongan yang pernah dinilai: **urutannya default dari yang paling
+baru dianalisis**, bisa diurutkan berdasarkan kecocokan, waktu, atau perusahaan; disaring
+berdasarkan keputusan; dicari berdasarkan posisi atau perusahaan; dan tiap barisnya bertaut ke
+lowongan aslinya. Dashboard juga menampilkan batch yang sedang berjalan, bisa menghentikannya, dan
+menyegarkan diri sendiri selama batch berjalan.
 
 ## Struktur
 

@@ -202,11 +202,11 @@ Two things worth knowing about how it navigates:
 
 ## Dashboard
 
-**Settings → Open dashboard** (or the button at the end of a batch) opens a full page with
-every job scored so far: **ordered by most recently analyzed by default**, sortable by match,
-recency or company, filterable by verdict, searchable by title or company, and linked back to each
-posting. It shows the running batch, lets you stop it, and refreshes itself while a batch is in
-progress.
+**The extension icon → Open dashboard** (or the button under Settings, or the one at the end of a
+batch) opens a full page with every job scored so far: **ordered by most recently analyzed by
+default**, sortable by match, recency or company, filterable by verdict, searchable by title or
+company, and linked back to each posting. It shows the running batch, lets you stop it, and
+refreshes itself while a batch is in progress.
 
 ## Structure
 
